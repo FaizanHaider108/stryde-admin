@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f7f5f2;
+  --foreground: #201e1f;
+  --card: #ffffff;
+  --border: #e5e0d8;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sora), system-ui, sans-serif;
+}
+
+@layer components {
+  .admin-card {
+    @apply rounded-2xl border border-light-brown/80 bg-white shadow-sm;
+  }
+
+  .admin-input {
+    @apply w-full rounded-xl border border-light-brown bg-white px-4 py-2.5 text-sm text-brown outline-none transition focus:border-green-accent focus:ring-2 focus:ring-green-accent/20;
+  }
+
+  .admin-btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-brown px-4 py-2.5 text-sm font-medium text-light-brown transition hover:bg-brown/90 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .admin-btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl border border-light-brown bg-white px-4 py-2.5 text-sm font-medium text-brown transition hover:bg-light-brown/40 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .admin-btn-danger {
+    @apply inline-flex items-center justify-center rounded-xl border border-red-200 bg-red-50 px-4 py-2.5 text-sm font-medium text-red-700 transition hover:bg-red-100 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+}
