@@ -26,7 +26,7 @@ export default function AdminDeleteButton({
     if (!window.confirm(confirmMessage)) return;
     setLoading(true);
     try {
-      const response = await fetch(`/api/admin/${apiPath}`, { method: "DELETE" });
+      const response = await fetch(`/api/v1/admin/${apiPath}`, { method: "DELETE" });
       const data = (await response.json()) as { error?: string };
       if (!response.ok) throw new Error(data.error ?? "Delete failed.");
       toast.success("Deleted.");
